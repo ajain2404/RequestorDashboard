@@ -1,0 +1,164 @@
+<edmx:Edmx xmlns:edmx="http://schemas.microsoft.com/ado/2007/06/edmx"
+	xmlns:m="http://schemas.microsoft.com/ado/2007/08/dataservices/metadata" xmlns:sap="http://www.sap.com/Protocols/SAPData" Version="1.0">
+	<edmx:DataServices m:DataServiceVersion="2.0">
+		<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" Namespace="ZXA_GENERIC_COCKPIT_SRV" xml:lang="en" sap:schema-version="1">
+			<EntityType Name="parametermapping" sap:content-version="1">
+				<Key><PropertyRef Name="mappingid"/><PropertyRef Name="tcode"/></Key><Property Name="mappingid" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Mapping Id"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="tcode" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Cockpit Tcode" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="sourceparameter" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Parameter Name"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="targetparameter" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Parameter Name"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="catalogusage" sap:content-version="1">
+				<Key><PropertyRef Name="guid"/><PropertyRef Name="uname"/><PropertyRef Name="counter"/></Key><Property Name="guid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="UUID" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="uname" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="counter" Type="Edm.Int64" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="addedon" Type="Edm.DateTime" Precision="0" sap:unicode="false" sap:label="Time Stamp" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="values" sap:content-version="1">
+				<Key><PropertyRef Name="tcode"/><PropertyRef Name="miniapp"/><PropertyRef Name="variant"/><PropertyRef Name="filters"/></Key><Property Name="tcode" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Cockpit Tcode" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="miniapp" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="MiniApp" sap:creatable="false"
+					sap:updatable="false"/><Property Name="variant" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="UUID" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="value" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"/><Property Name="filters" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="title" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="appvariant" sap:content-version="1">
+				<Key><PropertyRef Name="variant"/></Key><Property Name="tcode" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Cockpit Tcode" sap:updatable="false"
+					sap:filterable="false"/><Property Name="variant" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="UUID" sap:updatable="false" sap:filterable="false"/><Property Name="varianttx" Type="Edm.String" sap:unicode="false" sap:filterable="false"/><Property Name="isdefault" Type="Edm.Boolean" sap:unicode="false" sap:label="Indicator" sap:filterable="false"/><Property Name="isglobal" Type="Edm.Boolean" sap:unicode="false" sap:label="Indicator" sap:filterable="false"/><Property Name="createdby" Type="Edm.String" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:filterable="false"/><Property Name="executeonselection" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Indicator" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="favorite" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Indicator" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="settings" Type="Edm.String" sap:unicode="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="miniappvariant" sap:content-version="1">
+				<Key><PropertyRef Name="variant"/></Key><Property Name="miniapp" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="MiniApp" sap:filterable="false"/><Property Name="variant" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="UUID" sap:filterable="false"/><Property Name="varianttx" Type="Edm.String" sap:unicode="false" sap:filterable="false"/><Property Name="isdefault" Type="Edm.Boolean" sap:unicode="false" sap:label="Indicator" sap:filterable="false"/><Property Name="isglobal" Type="Edm.Boolean" sap:unicode="false" sap:label="Indicator" sap:filterable="false"/><Property Name="createdby" Type="Edm.String" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:filterable="false"/><Property Name="settings" Type="Edm.String" sap:unicode="false" sap:filterable="false"/><Property Name="tcode" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Cockpit Tcode" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="executeonselection" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Indicator" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="favorite" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Indicator" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="valuesbykeys" sap:content-version="1">
+				<Key><PropertyRef Name="miniapp"/><PropertyRef Name="tcode"/><PropertyRef Name="keys"/><PropertyRef Name="filters"/><PropertyRef Name="reqfields"/></Key><Property Name="miniapp" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="MiniApp" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="tcode" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Cockpit Tcode" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="values" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="keys" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="filters" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="reqfields" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/></EntityType>
+			<EntityType Name="miniapp" sap:content-version="1">
+				<Key><PropertyRef Name="id"/></Key><Property Name="id" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="MiniApp" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="title" Type="Edm.String" Nullable="false" MaxLength="70" sap:unicode="false" sap:label="Name of MiniApp"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="tcode" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Cockpit Tcode" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="tcodetx" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Title" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="saptcode" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="saptcodetx" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="hascatalog" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Indicator" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="properties" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="catalog" sap:content-version="1">
+				<Key><PropertyRef Name="guid"/></Key><Property Name="guid" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="UUID"/><Property Name="tcode" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Cockpit Tcode" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="tcodevariant" Type="Edm.Guid" Nullable="false" sap:unicode="false" sap:label="UUID" sap:filterable="false"/><Property Name="miniapp" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="MiniApp" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="title" Type="Edm.String" Nullable="false" MaxLength="100" sap:unicode="false" sap:filterable="false"/><Property Name="subtitle" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="icon" Type="Edm.String" Nullable="false" sap:unicode="false" sap:filterable="false"/><Property Name="unit" Type="Edm.String" Nullable="false" sap:unicode="false" sap:filterable="false"/><Property Name="info" Type="Edm.String" Nullable="false" sap:unicode="false" sap:filterable="false"/><Property Name="tags" Type="Edm.String" Nullable="false" sap:unicode="false" sap:filterable="false"/><Property Name="iseditable" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Indicator" sap:filterable="false"/><Property Name="isdeletable" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Indicator" sap:filterable="false"/></EntityType>
+			<EntityType Name="appmetadata" sap:content-version="1">
+				<Key><PropertyRef Name="tcode"/></Key><Property Name="tcode" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Cockpit Tcode" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="title" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="selectionfields" Type="Edm.String" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="defaultselectionvalues" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="miniapps" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="treeminiapp" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="properties" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="to_variant" Relationship="ZXA_GENERIC_COCKPIT_SRV.app_2_variant" FromRole="FromRole_app_2_variant"
+					ToRole="ToRole_app_2_variant"/></EntityType>
+			<EntityType Name="miniappmetadata" sap:content-version="1">
+				<Key><PropertyRef Name="miniapp"/><PropertyRef Name="tcode"/></Key><Property Name="miniapp" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="MiniApp" sap:creatable="false"
+					sap:updatable="false"/><Property Name="tcode" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Cockpit Tcode" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="title" Type="Edm.String" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="tablefields" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="actions" Type="Edm.String" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="properties" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="variants" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="to_variant" Relationship="ZXA_GENERIC_COCKPIT_SRV.ma_2_variant" FromRole="FromRole_ma_2_variant"
+					ToRole="ToRole_ma_2_variant"/></EntityType>
+			<EntityType Name="app" sap:content-version="1">
+				<Key><PropertyRef Name="tcode"/></Key><Property Name="tcode" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Cockpit Tcode" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="tcodetx" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:label="Title" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="saptcode" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Transaction Code"
+					sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="saptcodetx" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="hascatalog" Type="Edm.Boolean" Nullable="false" sap:unicode="false" sap:label="Indicator" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><NavigationProperty Name="catalog" Relationship="ZXA_GENERIC_COCKPIT_SRV.app_2_catalog" FromRole="FromRole_app_2_catalog"
+					ToRole="ToRole_app_2_catalog"/><NavigationProperty Name="miniappSet" Relationship="ZXA_GENERIC_COCKPIT_SRV.app_2_ma" FromRole="FromRole_app_2_ma" ToRole="ToRole_app_2_ma"/></EntityType>
+			<EntityType Name="treevalues" sap:content-version="1">
+				<Key><PropertyRef Name="tcode"/><PropertyRef Name="miniapp"/><PropertyRef Name="treetype"/><PropertyRef Name="keys"/><PropertyRef Name="filters"/></Key><Property Name="tcode" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="Cockpit Tcode" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false" sap:filterable="false"/><Property Name="miniapp" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:label="MiniApp" sap:creatable="false"
+					sap:updatable="false"/><Property Name="treetype" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="values" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"/><Property Name="keys" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="filters" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/></EntityType>
+			<EntityType Name="actionnavdet" sap:content-version="1">
+				<Key><PropertyRef Name="miniappid"/></Key><Property Name="miniappid" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="tcode" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="actiondata" Type="Edm.String" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="rowdata" Type="Edm.String" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="selectiondata" Type="Edm.String" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"/><Property Name="url" Type="Edm.String" sap:unicode="false" sap:creatable="false" sap:updatable="false" sap:sortable="false"
+					sap:filterable="false"/><Property Name="guishortcut" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="actionintent" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="actionparams" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/></EntityType>
+			<EntityType Name="cockpit" sap:content-version="1">
+				<Key><PropertyRef Name="saptcode"/></Key><Property Name="saptcode" Type="Edm.String" Nullable="false" MaxLength="20" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false"/><Property Name="saptcodetx" Type="Edm.String" Nullable="false" MaxLength="60" sap:unicode="false" sap:creatable="false"
+					sap:updatable="false" sap:sortable="false"/><Property Name="description" Type="Edm.String" Nullable="false" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><Property Name="system" Type="Edm.String" Nullable="false" MaxLength="10" sap:unicode="false" sap:creatable="false" sap:updatable="false"
+					sap:sortable="false" sap:filterable="false"/><NavigationProperty Name="appSet" Relationship="ZXA_GENERIC_COCKPIT_SRV.cockpit_2_app" FromRole="FromRole_cockpit_2_app"
+					ToRole="ToRole_cockpit_2_app"/></EntityType>
+			<Association Name="cockpit_2_app" sap:content-version="1"><End Type="ZXA_GENERIC_COCKPIT_SRV.cockpit" Multiplicity="1" Role="FromRole_cockpit_2_app"/><End Type="ZXA_GENERIC_COCKPIT_SRV.app" Multiplicity="*" Role="ToRole_cockpit_2_app"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_cockpit_2_app"><PropertyRef Name="saptcode"/></Principal>
+					<Dependent Role="ToRole_cockpit_2_app"><PropertyRef Name="saptcode"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="ma_2_variant" sap:content-version="1"><End Type="ZXA_GENERIC_COCKPIT_SRV.miniappmetadata" Multiplicity="1" Role="FromRole_ma_2_variant"/><End Type="ZXA_GENERIC_COCKPIT_SRV.miniappvariant" Multiplicity="*" Role="ToRole_ma_2_variant"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_ma_2_variant"><PropertyRef Name="tcode"/><PropertyRef Name="miniapp"/></Principal>
+					<Dependent Role="ToRole_ma_2_variant"><PropertyRef Name="tcode"/><PropertyRef Name="miniapp"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="app_2_variant" sap:content-version="1"><End Type="ZXA_GENERIC_COCKPIT_SRV.appmetadata" Multiplicity="1" Role="FromRole_app_2_variant"/><End Type="ZXA_GENERIC_COCKPIT_SRV.appvariant" Multiplicity="*" Role="ToRole_app_2_variant"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_app_2_variant"><PropertyRef Name="tcode"/></Principal>
+					<Dependent Role="ToRole_app_2_variant"><PropertyRef Name="tcode"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="app_2_catalog" sap:content-version="1"><End Type="ZXA_GENERIC_COCKPIT_SRV.app" Multiplicity="1" Role="FromRole_app_2_catalog"/><End Type="ZXA_GENERIC_COCKPIT_SRV.catalog" Multiplicity="*" Role="ToRole_app_2_catalog"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_app_2_catalog"><PropertyRef Name="tcode"/></Principal>
+					<Dependent Role="ToRole_app_2_catalog"><PropertyRef Name="tcode"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<Association Name="app_2_ma" sap:content-version="1"><End Type="ZXA_GENERIC_COCKPIT_SRV.app" Multiplicity="1" Role="FromRole_app_2_ma"/><End Type="ZXA_GENERIC_COCKPIT_SRV.miniapp" Multiplicity="*" Role="ToRole_app_2_ma"/>
+				<ReferentialConstraint>
+					<Principal Role="FromRole_app_2_ma"><PropertyRef Name="tcode"/></Principal>
+					<Dependent Role="ToRole_app_2_ma"><PropertyRef Name="tcode"/></Dependent>
+				</ReferentialConstraint>
+			</Association>
+			<EntityContainer Name="ZXA_GENERIC_COCKPIT_SRV_Entities" m:IsDefaultEntityContainer="true" sap:supported-formats="atom json xlsx"><EntitySet Name="parametermappingSet" EntityType="ZXA_GENERIC_COCKPIT_SRV.parametermapping" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="catalogusageSet" EntityType="ZXA_GENERIC_COCKPIT_SRV.catalogusage" sap:pageable="false" sap:addressable="false"
+				sap:content-version="1"/><EntitySet Name="valuesSet" EntityType="ZXA_GENERIC_COCKPIT_SRV.values" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="appvariantSet" EntityType="ZXA_GENERIC_COCKPIT_SRV.appvariant" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="miniappvariantSet" EntityType="ZXA_GENERIC_COCKPIT_SRV.miniappvariant" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="valuesbykeysSet" EntityType="ZXA_GENERIC_COCKPIT_SRV.valuesbykeys" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="miniappSet" EntityType="ZXA_GENERIC_COCKPIT_SRV.miniapp" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="catalogSet" EntityType="ZXA_GENERIC_COCKPIT_SRV.catalog" sap:pageable="false" sap:addressable="false"
+				sap:content-version="1"/><EntitySet Name="appmetadataSet" EntityType="ZXA_GENERIC_COCKPIT_SRV.appmetadata" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="miniappmetadataSet" EntityType="ZXA_GENERIC_COCKPIT_SRV.miniappmetadata" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="appSet" EntityType="ZXA_GENERIC_COCKPIT_SRV.app" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="treevaluesSet" EntityType="ZXA_GENERIC_COCKPIT_SRV.treevalues" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="actionnavdetSet" EntityType="ZXA_GENERIC_COCKPIT_SRV.actionnavdet" sap:creatable="false" sap:updatable="false"
+				sap:deletable="false" sap:pageable="false" sap:addressable="false" sap:content-version="1"/><EntitySet Name="cockpitSet" EntityType="ZXA_GENERIC_COCKPIT_SRV.cockpit" sap:creatable="false" sap:updatable="false" sap:deletable="false"
+				sap:pageable="false" sap:addressable="false" sap:content-version="1"/>
+				<AssociationSet Name="app_2_maSet" Association="ZXA_GENERIC_COCKPIT_SRV.app_2_ma" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="appSet" Role="FromRole_app_2_ma"/><End EntitySet="miniappSet" Role="ToRole_app_2_ma"/></AssociationSet>
+				<AssociationSet Name="app_2_variants" Association="ZXA_GENERIC_COCKPIT_SRV.app_2_variant" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="appmetadataSet" Role="FromRole_app_2_variant"/><End EntitySet="appvariantSet" Role="ToRole_app_2_variant"/></AssociationSet>
+				<AssociationSet Name="cockpit_2_appSet" Association="ZXA_GENERIC_COCKPIT_SRV.cockpit_2_app" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="cockpitSet" Role="FromRole_cockpit_2_app"/><End EntitySet="appSet" Role="ToRole_cockpit_2_app"/></AssociationSet>
+				<AssociationSet Name="app_2_catalogSet" Association="ZXA_GENERIC_COCKPIT_SRV.app_2_catalog" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="appSet" Role="FromRole_app_2_catalog"/><End EntitySet="catalogSet" Role="ToRole_app_2_catalog"/></AssociationSet>
+				<AssociationSet Name="ma_2_variantSet" Association="ZXA_GENERIC_COCKPIT_SRV.ma_2_variant" sap:creatable="false" sap:updatable="false"
+					sap:deletable="false" sap:content-version="1"><End EntitySet="miniappmetadataSet" Role="FromRole_ma_2_variant"/><End EntitySet="miniappvariantSet" Role="ToRole_ma_2_variant"/></AssociationSet>
+			</EntityContainer><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="self" href="./sap/ZXA_GENERIC_COCKPIT_SRV/$metadata"/><atom:link xmlns:atom="http://www.w3.org/2005/Atom" rel="latest-version" href="./sap/ZXA_GENERIC_COCKPIT_SRV/$metadata"/></Schema>
+	</edmx:DataServices>
+</edmx:Edmx>

@@ -154,7 +154,7 @@
 					"entitySet": "ZC_SO_RQ_OutStandingDlv_OVP",
 					"listFlavor": "standard",
 					"sortBy": "StatisticalDeliveryDate",
-					"sortOrder": "descending",
+					"sortOrder": "ascending",
 					"addODataSelect": false,
 					"annotationPath": "com.sap.vocabularies.UI.v1.LineItem"
 				}

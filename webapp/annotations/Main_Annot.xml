@@ -26,6 +26,14 @@
 				<!--		</Record>-->
 				<!--	</Collection>-->
 				<!--</Annotation>-->
+				<Annotation Term="UI.Identification" Qualifier="ID_OpenPR_Intent">
+					<Collection>
+						<Record Type="UI.DataFieldForIntentBasedNavigation">
+							<PropertyValue Property="SemanticObject" String="PurchaseRequisition"/>
+							<PropertyValue Property="Action" String="centralManagement"/>
+						</Record>
+					</Collection>
+				</Annotation>
 				<Annotation Term="UI.DataPoint" Qualifier="DP_OpenPR">
 					<Record Type="UI.DataPointType">
 						<PropertyValue Property="ValueFormat">
